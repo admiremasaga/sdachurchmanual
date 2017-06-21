@@ -1,0 +1,89 @@
+/*
+   statusbar-overlay sets the background color for the overlay. Black text is the default when the statusbar plugin is not added. When the
+   statusbar plugin is added, it also adds default setting to make the content white via:
+
+       <preference name="StatusBarStyle" value="lightcontent"/>
+
+   Setting the background color to black will allow the default light content (white text/icons) to show on it. The statusbar plugin is included
+   in the config.xml file and will be added by the CLI when you build locally.
+
+   See https://github.com/apache/cordova-plugin-statusbar
+*/
+
+.statusbar-overlay {
+    background: #000000;
+}
+
+td {
+	
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+td:hover{
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.secs {
+	color: maroon;
+	font-size: 120%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.topbar {
+	position: fixed;
+	top: 15px;
+	background: maroon;
+		
+}
+.manualpara {
+	text-indent: 50px;
+	text-align: justify;
+}
+
+.paddedsecs {
+	padding-top: 45px;
+}
+
+.smallpagepara{
+	text-align: right;
+	font-size: 90%;
+}
+
+/* FONTS THEMES TO CHANGE ON THE FLY */
+.bigfont{
+	font-size: 200%;
+}
+.mediumfont{
+	font-size: 150%;
+}
+/* COLOUR THEMES TO CHANGE ON THE FLY */
+.darktheme{
+	background: black;
+	color: white;
+}
+.lighttheme{
+	background: white;
+	color: black;
+}
+
+/* FONT icon */
+.smallA{
+	font-size: 50%;
+}
+.mediumA{
+	font-size: 75%;
+}
+.bigA{
+	font-size: 100%;
+}
+/*COLOR icon */
+.redR, .blueB, .greenG{
+	font-weight: bold;
+}
+.redR{
+	color: red;
+}
+.blueB{
+	color: blue;
+}
+.greenG{
+	color: green;
+}
