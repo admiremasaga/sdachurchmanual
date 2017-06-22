@@ -1659,7 +1659,7 @@ function checkTablesCreated(){
 				dropAllTables();
 				alert ('Something is missing Please wait while we try and fix this error .......');
 			}
-		}, function(err) {alert ('failed'+err.code+ 'because'+ err.message);
+		}, function(err) {
 			dropAllTables();
 			}
 		);});
