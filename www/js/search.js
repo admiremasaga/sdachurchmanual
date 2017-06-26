@@ -1,4 +1,3 @@
-
 function searchresultlocator(resultpos){
 	$$(".page-content").scrollTop(0);	
 	topd = $$("#"+resultpos).offset();
@@ -28,8 +27,10 @@ $$('.opensearch').on('click', function(){
 }
 );
 function searchkeywords(keywords){
-		myApp.openPanel('right');
 		a = keywords;
+		if (a.replace(/^\s+|\s+$/g, "").length != 0)
+			myApp.openPanel('right');
+		a = a.replace(/^\s+|\s+$/g, "");
 			aresult = [];
 		aresult = a.split(" ");
 		searchquery = "%";
@@ -96,7 +97,10 @@ function searchkeywords(keywords){
 				pagepara = ""+item.page + item.paragraph;
 				resultContent = resultContent + '<a href="#" class="searchresultlink panellinks" onclick=searchresultlocator('+pagepara+');><p>'+ newword + '</p></a>';
 			}
-			
+			if (resultContent.length == 0){
+				boldSearch(a);
+				resultContent = "no results found matching "+newword+" try another keyword";
+			}
 			$$('#results-content').html(resultContent);
 			$$('.panellinks').on('click', function(e){
 				myApp.closePanel();
