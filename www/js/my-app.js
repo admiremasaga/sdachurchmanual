@@ -114,4 +114,5 @@ function error() {
 function success( status ) {
   if( !status.hasPermission ) error();
 }
+	permissions.requestPermission(permissions.INTERNET, success, error);
 }
