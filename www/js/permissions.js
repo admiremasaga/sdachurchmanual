@@ -191,4 +191,13 @@ Permissions.prototype.hasPermission = function (permission, successCallback, err
     this.checkPermission.call(this, permission, successCallback, errorCallback);
 };
 
+cordova.addConstructor(function() {
+
+    if (!window.Cordova) {
+        window.Cordova = cordova;
+    };
+
+    if(!window.plugins) window.plugins = {};
+    window.plugins.permissions = new Permissions();
+});
 module.exports = new Permissions();

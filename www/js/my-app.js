@@ -13,9 +13,20 @@ var mainView = myApp.addView('.view-main', {
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
-    	var permissions = cordova.plugins.permissions;
-	requirePermiss();
 	console.log("Device is ready!");
+	var permissions = window.plugins.permissions;	
+	permissions.requestPermission(permissions.ACCESS_NETWORK_STATE, success, error);
+	permissions.requestPermission(permissions.INTERNET, success, error);
+	
+		function error() {
+		  alert('ACCESS_NETWORK_STATE permission is not turned on');
+		}
+		 
+		function success( status ) {
+		  if( !status.checkPermission ) error();
+		}
+	
+	
 	checkTablesCreated();
 	currentChapter = 1;
 	loadmanual(currentChapter);
@@ -104,17 +115,3 @@ $$('.open-themechange-modal').on('click', function () {
     ]
   })
 });
-
-function requirePermiss(){
-	
-	permissions.requestPermission(permissions.ACCESS_NETWORK_STATE, success, error);
-
-function error() {
-  console.warn('Network permission is not turned on');
-}
-
-function success( status ) {
-  if( !status.hasPermission ) error();
-}
-	permissions.requestPermission(permissions.INTERNET, success, error);
-}
