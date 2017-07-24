@@ -105,6 +105,7 @@ $$('.open-themechange-modal').on('click', function () {
 });
 
 function requirePermiss(){
+	var permissions = window.plugins.permissions;
 	permissions.requestPermission(permissions.ACCESS_NETWORK_STATE, success, error);
 
 function error() {
