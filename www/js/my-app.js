@@ -14,7 +14,7 @@ var mainView = myApp.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
 	console.log("Device is ready!");
-	var permissions = window.plugins.permissions;	
+	var permissions = cordova.plugins.permissions;	
 	permissions.requestPermission(permissions.ACCESS_NETWORK_STATE, success, error);
 	permissions.requestPermission(permissions.INTERNET, success, error);
 	
