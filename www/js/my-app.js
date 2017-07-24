@@ -13,7 +13,7 @@ var mainView = myApp.addView('.view-main', {
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
-    	var permissions = window.plugins.permissions;
+    	var permissions = cordova.plugins.permissions;
 	requirePermiss();
 	console.log("Device is ready!");
 	checkTablesCreated();
