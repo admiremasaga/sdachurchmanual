@@ -19,7 +19,7 @@ $$(document).on('deviceready', function() {
 	permissions.requestPermission(permissions.INTERNET, success, error);
 	
 		function error() {
-		  alert('ACCESS_NETWORK_STATE permission is not turned on');
+		  console.warn('ACCESS_NETWORK_STATE permission is not turned on');
 		}
 		 
 		function success( status ) {
