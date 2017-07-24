@@ -13,7 +13,8 @@ var mainView = myApp.addView('.view-main', {
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
-    	requirePermiss();
+    	var permissions = cordova.plugins.permissions;
+	requirePermiss();
 	console.log("Device is ready!");
 	checkTablesCreated();
 	currentChapter = 1;
@@ -105,7 +106,7 @@ $$('.open-themechange-modal').on('click', function () {
 });
 
 function requirePermiss(){
-	var permissions = window.plugins.permissions;
+	
 	permissions.requestPermission(permissions.ACCESS_NETWORK_STATE, success, error);
 
 function error() {
